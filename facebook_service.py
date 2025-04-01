@@ -29,6 +29,6 @@ def fetch_facebook_condo():
         elif response.status_code != 200:
             return ServerErrorException
     except requests.exceptions.RequestException as e:
-        logger.error("500 Error from facebook")
+        logger.error("500 Error from facebook" + str(e))
         return ServerErrorException
     logger.info('Fetching facebook condo done')
